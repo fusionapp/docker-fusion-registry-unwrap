@@ -7,5 +7,5 @@ COPY ["hosts.allow", "/etc/hosts.allow"]
 COPY ["hosts.deny", "/etc/hosts.deny"]
 ENTRYPOINT [ \
   "/usr/bin/socat", \
-  "OPENSSL-LISTEN:5001,tcpwrap,fork,cert=/srv/certs/private/scarlet.fusionapp.com.pem", \
+  "OPENSSL-LISTEN:5001,tcpwrap,fork,cert=/srv/certs/private/scarlet.fusionapp.com-letsencrypt.pem", \
   "OPENSSL:scarlet.fusionapp.com:5000,cafile=/srv/certs/public/fusion-ca.crt.pem,cert=/srv/certs/private/scarlet.fusionapp.com.pem"]
